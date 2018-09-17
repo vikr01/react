@@ -1,8 +1,10 @@
+'use strict';
+
 module.exports = function(api) {
   return {
     presets: [
       '@babel/preset-flow',
-      ['@babel/preset-react', {development: api.env(['development', 'test'])}]
+      ['@babel/preset-react', {development: api.env(['development', 'test'])}],
     ],
     ignore: ['third_party'],
     plugins: [
