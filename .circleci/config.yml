@@ -42,9 +42,13 @@ jobs:
           command: ./scripts/circleci/test_entry_point.sh
 
       - run:
+          name: Test Packages Prod
+          command: yarn run test-prod
+
+      - run:
           name: Build
           command: yarn run build
 
       - run:
           name: Test Build
-          command: yarn run test-prod
+          command: yarn run test-build-prod
