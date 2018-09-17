@@ -19,7 +19,7 @@ const pathToBabelPluginWrapWarning = require.resolve(
 const pathToBabelPluginAsyncToGenerator = require.resolve(
   '@babel/plugin-transform-async-to-generator'
 );
-const pathToBabelrc = path.join(__dirname, '..', '..', 'babel.config.js');
+const pathToBabelrc = require.resolve('../../babel.config');
 const pathToErrorCodes = require.resolve('../error-codes/codes.json');
 
 const babelOptions = {
