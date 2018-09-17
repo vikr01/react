@@ -36,7 +36,6 @@
     "babel-eslint": "^10.0.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.0.1",
-    "babel-plugin-syntax-trailing-function-commas": "^6.5.0",
     "babylon": "6.18.0",
     "chalk": "^1.1.3",
     "cli-table": "^0.3.1",
