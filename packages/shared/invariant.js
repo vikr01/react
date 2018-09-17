@@ -22,7 +22,7 @@ let validateFormat = () => {};
 if (__DEV__) {
   validateFormat = function(format) {
     if (format === undefined) {
-      throw new Error('invariant requires an error message argument');
+      throw new TypeError('invariant requires an error message argument');
     }
   };
 }
@@ -33,14 +33,14 @@ export default function invariant(condition, format, a, b, c, d, e, f) {
   if (!condition) {
     let error;
     if (format === undefined) {
-      error = new Error(
+      error = new TypeError(
         'Minified exception occurred; use the non-minified dev environment ' +
           'for the full error message and additional helpful warnings.',
       );
     } else {
       const args = [a, b, c, d, e, f];
       let argIndex = 0;
-      error = new Error(
+      error = new TypeError(
         format.replace(/%s/g, function() {
           return args[argIndex++];
         }),
