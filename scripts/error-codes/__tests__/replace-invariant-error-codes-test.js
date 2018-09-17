@@ -12,6 +12,7 @@ let devExpressionWithCodes = require('../replace-invariant-error-codes');
 
 function transform(input) {
   return babel.transform(input, {
+    cwd: __dirname,
     plugins: [devExpressionWithCodes],
   }).code;
 }

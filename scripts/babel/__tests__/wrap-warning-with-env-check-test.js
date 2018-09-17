@@ -12,6 +12,7 @@ let wrapWarningWithEnvCheck = require('../wrap-warning-with-env-check');
 
 function transform(input) {
   return babel.transform(input, {
+    cwd: __dirname,
     plugins: [wrapWarningWithEnvCheck],
   }).code;
 }
