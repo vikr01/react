@@ -6,8 +6,8 @@
  */
 'use strict';
 
-module.exports = function(babel, options) {
-  const t = babel.types;
+module.exports = function(api, options) {
+  const t = api.types;
 
   const DEV_EXPRESSION = t.identifier('__DEV__');
 
