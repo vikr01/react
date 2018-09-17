@@ -31,12 +31,20 @@ jobs:
           name: Install Packages
           command: yarn install --frozen-lockfile
 
-      - run:
-          name: Test Packages
-          command: ./scripts/circleci/test_entry_point.sh
-
       - save_cache:
           name: Save node_modules cache
           key: v1-node-{{ arch }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
           paths:
             - node_modules
+
+      - run:
+          name: Test Packages
+          command: ./scripts/circleci/test_entry_point.sh
+
+      - run:
+          name: Build
+          command: yarn run build
+
+      - run:
+          name: Test Build
+          command: yarn run test-prod
