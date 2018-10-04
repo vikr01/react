@@ -1,4 +1,6 @@
 module.exports = function(api) {
+  api.cache(false); // change this later
+
   return {
     presets: [require('@babel/preset-react')],
     ignore: ['third_party'],
