@@ -21,7 +21,7 @@ const MAX_SOURCE_ITERATIONS = 1500;
 // For example, in the fuzz tester.
 const MAX_TEST_ITERATIONS = 5000;
 
-module.exports = declare((api) => {
+module.exports = declare(api => {
   api.assertVersion(7);
   // We set a global so that we can later fail the test
   // even if the error ends up being caught by the code.

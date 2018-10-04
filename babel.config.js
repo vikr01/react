@@ -4,7 +4,10 @@ module.exports = function(api) {
     ignore: ['third_party'],
     plugins: [
       [require('@babel/plugin-proposal-class-properties'), {loose: true}],
-      [require('@babel/plugin-proposal-object-rest-spread'), {useBuiltIns: true}],
+      [
+        require('@babel/plugin-proposal-object-rest-spread'),
+        {useBuiltIns: true},
+      ],
       require('@babel/plugin-transform-template-literals'),
       require('@babel/plugin-transform-literals'),
       require('@babel/plugin-transform-arrow-functions'),
@@ -17,7 +20,10 @@ module.exports = function(api) {
       [require('@babel/transform-spread'), {loose: true}],
       require('@babel/transform-parameters'),
       [require('@babel/plugin-transform-destructuring'), {loose: true}],
-      [require('@babel/plugin-transform-block-scoping'), {throwIfClosureRequired: true}],
+      [
+        require('@babel/plugin-transform-block-scoping'),
+        {throwIfClosureRequired: true},
+      ],
     ],
   };
 };
