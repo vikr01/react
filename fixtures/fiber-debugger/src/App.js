@@ -121,7 +121,7 @@ class App extends Component {
     // eslint-disable-next-line
     eval(
       window.Babel.transform(code, {
-        presets: ['react', 'es2015'],
+        presets: ['@babel/preset-react', '@babel/preset-env'],
       }).code
     );
   }

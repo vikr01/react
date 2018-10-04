@@ -1,5 +1,5 @@
 require('ignore-styles');
-const babelRegister = require('babel-register');
+const babelRegister = require('@babel/register');
 const proxy = require('http-proxy-middleware');
 
 babelRegister({

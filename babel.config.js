@@ -17,8 +17,8 @@ module.exports = function(api) {
       require('@babel/plugin-transform-shorthand-properties'),
       require('@babel/plugin-transform-computed-properties'),
       require('@babel/plugin-transform-for-of'),
-      [require('@babel/transform-spread'), {loose: true}],
-      require('@babel/transform-parameters'),
+      [require('@babel/plugin-transform-spread'), {loose: true}],
+      require('@babel/plugin-transform-parameters'),
       [require('@babel/plugin-transform-destructuring'), {loose: true}],
       [
         require('@babel/plugin-transform-block-scoping'),
