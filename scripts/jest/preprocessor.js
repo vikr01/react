@@ -17,7 +17,7 @@ const pathToBabelPluginWrapWarning = require.resolve(
   '../babel/wrap-warning-with-env-check'
 );
 const pathToBabelPluginAsyncToGenerator = require.resolve(
-  'babel-plugin-transform-async-to-generator'
+  '@babel/plugin-transform-async-to-generator'
 );
 const pathToBabelrc = require.resolve('../../babel.config.js');
 const pathToErrorCodes = require.resolve('../error-codes/codes.json');
@@ -25,7 +25,7 @@ const pathToErrorCodes = require.resolve('../error-codes/codes.json');
 const babelOptions = {
   plugins: [
     // For Node environment only. For builds, Rollup takes care of ESM.
-    require.resolve('babel-plugin-transform-es2015-modules-commonjs'),
+    require.resolve('@babel/plugin-transform-modules-commonjs'),
 
     pathToBabelPluginDevWithCode,
     pathToBabelPluginWrapWarning,
