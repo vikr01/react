@@ -11,7 +11,12 @@ import 'core-js/modules/es6.object.set-prototype-of';
 
 import {transform} from '@babel/standalone';
 
-const presets = ['@babel/preset-env', '@babel/preset-react'];
+const presets = [
+  '@babel/preset-env',
+  '@babel/preset-flow',
+  '@babel/preset-react',
+];
+
 const plugins = [
   // formerly babel-preset-stage-3
   '@babel/plugin-syntax-dynamic-import',
