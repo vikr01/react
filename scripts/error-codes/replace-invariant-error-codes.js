@@ -6,22 +6,25 @@
  */
 'use strict';
 
+const {declare} = require('@babel/helper-plugin-utils');
+const {types: t} = require('@babel/core');
+const {addDefault} = require('@babel/helper-module-imports');
 const fs = require('fs');
 const evalToString = require('../shared/evalToString');
 const invertObject = require('./invertObject');
 
-module.exports = function(babel) {
-  const t = babel.types;
+module.exports = declare(function(api) {
+  api.assertVersion(7);
 
   const SEEN_SYMBOL = Symbol('replace-invariant-error-codes.seen');
 
   // Generate a hygienic identifier
   function getProdInvariantIdentifier(path, file, localState) {
     if (!localState.prodInvariantIdentifier) {
-      localState.prodInvariantIdentifier = file.addImport(
+      localState.prodInvariantIdentifier = addDefault(
+        path,
         'shared/reactProdInvariant',
-        'default',
-        'prodInvariant'
+        {nameHint: 'prodInvariant'}
       );
     }
     return localState.prodInvariantIdentifier;
@@ -132,4 +135,4 @@ module.exports = function(babel) {
       },
     },
   };
-};
+});

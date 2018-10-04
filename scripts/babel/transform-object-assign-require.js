@@ -7,12 +7,17 @@
 
 'use strict';
 
-module.exports = function autoImporter(babel) {
+const {declare} = require('@babel/helper-plugin-utils');
+const {addDefault} = require('@babel/helper-module-imports');
+
+module.exports = declare(function autoImporter(api) {
+  api.assertVersion(7);
+
   function getAssignIdent(path, file, state) {
     if (state.id) {
       return state.id;
     }
-    state.id = file.addImport('object-assign', 'default', 'assign');
+    state.id = addDefault(path, 'object-assign', {nameHint: 'assign'});
     return state.id;
   }
 
@@ -39,4 +44,4 @@ module.exports = function autoImporter(babel) {
       },
     },
   };
-};
+});

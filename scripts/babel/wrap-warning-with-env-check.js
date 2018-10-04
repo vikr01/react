@@ -6,8 +6,11 @@
  */
 'use strict';
 
-module.exports = function(babel, options) {
-  const t = babel.types;
+const {declare} = require('@babel/helper-plugin-utils');
+const {types: t} = require('@babel/core');
+
+module.exports = declare(function(api, options) {
+  api.assertVersion(7);
 
   const DEV_EXPRESSION = t.identifier('__DEV__');
 
@@ -64,4 +67,4 @@ module.exports = function(babel, options) {
       },
     },
   };
-};
+});
