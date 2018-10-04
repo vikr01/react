@@ -14,7 +14,7 @@ module.exports = function(api) {
       require('@babel/plugin-transform-block-scoped-functions'),
       [require('@babel/plugin-transform-classes'), {loose: true}],
       require('@babel/plugin-transform-object-super'),
-      require('@babel/transform-shorthand-properties'),
+      require('@babel/plugin-transform-shorthand-properties'),
       require('@babel/plugin-transform-computed-properties'),
       require('@babel/plugin-transform-for-of'),
       [require('@babel/transform-spread'), {loose: true}],
