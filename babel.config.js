@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function(api) {
   api.cache(false); // change this later
 
