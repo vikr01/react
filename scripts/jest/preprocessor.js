@@ -9,11 +9,7 @@ const tsPreprocessor = require('./typescript/preprocessor');
 const createCacheKeyFunction = require('fbjs-scripts/jest/createCacheKeyFunction');
 
 // Use require.resolve to be resilient to file moves, npm updates, etc
-const pathToBabel = path.join(
-  require.resolve('babel-core'),
-  '..',
-  'package.json'
-);
+const pathToBabel = require.resolve('@babel/core/package.json');
 const pathToBabelPluginDevWithCode = require.resolve(
   '../error-codes/replace-invariant-error-codes'
 );
@@ -23,7 +19,7 @@ const pathToBabelPluginWrapWarning = require.resolve(
 const pathToBabelPluginAsyncToGenerator = require.resolve(
   'babel-plugin-transform-async-to-generator'
 );
-const pathToBabelrc = path.join(__dirname, '..', '..', '.babelrc');
+const pathToBabelrc = require.resolve('../../babel.config.js');
 const pathToErrorCodes = require.resolve('../error-codes/codes.json');
 
 const babelOptions = {
@@ -38,7 +34,7 @@ const babelOptions = {
     // Don't put this in .babelrc so that we don't embed filenames
     // into ReactART builds that include JSX.
     // TODO: I have not verified that this actually works.
-    require.resolve('babel-plugin-transform-react-jsx-source'),
+    require.resolve('@babel/plugin-transform-react-jsx-source'),
 
     require.resolve('../babel/transform-prevent-infinite-loops'),
   ],
