@@ -6,10 +6,10 @@
  */
 'use strict';
 
-const babylon = require('babylon');
+const babylon = require('@babel/parser');
 const fs = require('fs');
 const through = require('through2');
-const traverse = require('babel-traverse').default;
+const {default: traverse} = require('@babel/traverse');
 const gs = require('glob-stream');
 
 const evalToString = require('../shared/evalToString');
@@ -24,7 +24,8 @@ const babylonOptions = {
     'classProperties',
     'flow',
     'jsx',
-    'trailingFunctionCommas',
+    // 'trailingFunctionCommas', // Now enabled by defualt for babel parse,
+    // // see https://github.com/babel/babel/blob/eac4c5bc17133c2857f2c94c1a6a8643e3b547a7/packages/babel-parser/CHANGELOG.md#691-2016-08-23
     'objectRestSpread',
   ],
 };
